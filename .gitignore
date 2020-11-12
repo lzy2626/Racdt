@@ -1,0 +1,14 @@
+# Project exclude paths
+/.gradle/
+/app/build/
+/app/build/intermediates/javac/debug/classes/
+/base/build/
+/base/build/intermediates/javac/debug/classes/
+/common/build/
+/common/build/intermediates/javac/debug/classes/
+/network/build/
+/network/build/intermediates/javac/debug/classes/
+/news/build/
+/news/build/intermediates/javac/debug/classes/
+/webview/build/
+/webview/build/intermediates/javac/debug/classes/
