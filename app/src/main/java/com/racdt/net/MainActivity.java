@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.racdt.net.R;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -30,17 +29,19 @@ import java.lang.reflect.Field;
 
 import q.rorbin.badgeview.QBadgeView;
 
+
 public class MainActivity extends AppCompatActivity {
     private Fragment mHomeFragment = new HeadlineNewsFragment();
     private CategoryFragment mCategoryFragment = new CategoryFragment();
     private ServiceFragment mServiceFragment = new ServiceFragment();
     private AccountFragment mAccountFragment = new AccountFragment();
     private ActivityMainBinding viewDataBinding;
+
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewDataBinding = DataBindingUtil.setContentView(this,  R.layout.activity_main);
+        viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         fromFragment = mCategoryFragment;
         //Set Toolbar

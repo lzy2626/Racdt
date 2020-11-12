@@ -1,0 +1,115 @@
+ext {
+    //versionCode versionName
+    versionCode = 1911161810
+    versionName = "3.9.6"
+    //Android工程配置相关
+    androidCompileSdkVersion = 28
+    androidBuildToolsVersion = "28.0.3"
+    androidMinSdkVersion = 19
+    androidTargetSdkVersion = 28
+    supportLibraryVersion = '27.1.1'
+    javaVersion = '1.8'
+
+    //类库配置相关
+    constraint_layout = '1.1.3'
+    multidex = ''
+    butterKnifeVersion = '10.1.0'
+    rxandroid = '2.0.1'
+    rxjava = '2.1.8'
+    retrofit = '2.4.0'
+    converter_gson = '2.4.0'
+    adapter_rxjava2 = '2.4.0'
+    logging_interceptor = '3.8.1'
+    okhttp = '3.8.1'
+    eventbus = '3.1.1'
+    logger = '2.2.0'
+    adapterHelper = '2.9.30'
+    glide = '4.9.0'
+    gif = '1.4'
+    refresh = '1.0.5.1'
+    gsyvideo = '7.1.6'
+    circleimageview = '2.2.0'
+    pickview = '1.2.3'
+    SensorsAnalyticsSDK = '3.2.0'
+    Android_PickerView = '4.1.8'
+    lottie = '3.3.0'
+    rxlifecycle_android = '2.0.1'
+    rxlifecycle_components = '2.0.1'
+    sofia = '1.0.5'
+    MagicIndicator = '1.5.0'
+    MagicIndicator = '1.5.0'
+    roundedimageview = '2.3.0'
+    leakcanary = '1.6.2'
+    autosize = ''
+    immersionbar = '3.0.0-beta05'
+    transformations = '4.0.1'
+    Banner = "1.0.7"
+    y_divideritemdecoration = "2.0"
+    swipe_back = "1.1.0"
+    getuigi = "3.1.7.0"
+    ImageWatcher = "1.1.5"
+    recyclerview_animators = "2.2.6"
+    richtext = "3.0.8"
+    horizontalrefreshlayout = "v0.1.2"
+    httplogger = "1.0.1"
+    animated_gif = "1.10.0"
+    flowlayout = "1.0.1"
+    dialog = "1.1.0"
+    react_native = "+"
+    getui = "2.14.1.0"
+    oppo = "1.0.7"
+    mzp = "1.0.7"
+    xmp = "1.0.5"
+    vivo = "1.0.5"
+    crashreport_upgrade = "1.4.2"
+    tinker_android_lib = "1.9.14.3"    // 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
+    nativecrashreport = "3.7.1"
+    PhotoView = "2.3.0"
+    oss_android_sdk = "+"
+    om_recorder = "1.1.5"
+    ffmpeg_android_java = "2a627f6ecd@aar"
+    stateview_library = "1.5.4"
+    microsoft_voice = "1.12.1"
+    RangeSeekBar = "v3.0.0"
+    ViewPager2 = "1.0.0"
+
+    //官方库
+    supportDependencies = [
+            appcompat        : 'androidx.appcompat:appcompat:1.0.2',
+            material         : 'com.google.android.material:material:1.0.0',
+            recyclerView     : 'androidx.recyclerview:recyclerview:1.1.0-beta01',
+            cardview         : 'androidx.cardview:cardview:1.0.0',
+            palette          : 'androidx.palette:palette:1.0.0',
+            annotation       : 'androidx.annotation:annotation:1.0.0',
+            constraint_layout: 'androidx.constraintlayout:constraintlayout:1.1.3',
+    ]
+
+    //非官方库
+    otherDependencies = [
+            multidex              : "androidx.multidex:multidex:2.0.0",
+            rxandroid             : "io.reactivex.rxjava2:rxandroid:${rxandroid}",
+            rxjava                : "io.reactivex.rxjava2:rxjava:${rxjava}",
+            retrofit              : "com.squareup.retrofit2:retrofit:${retrofit}",
+            converter_gson        : "com.squareup.retrofit2:converter-gson:${converter_gson}",
+            adapter_rxjava2       : "com.squareup.retrofit2:adapter-rxjava2:${adapter_rxjava2}",
+            okhttp                : "com.squareup.okhttp3:okhttp:${okhttp}",
+            eventbus              : "org.greenrobot:eventbus:${eventbus}",
+            logger                : "com.orhanobut:logger:${logger}",
+            refresh_layout        : "com.scwang.smartrefresh:SmartRefreshLayout:${refresh}",
+            refresh_layout_header : "com.scwang.smartrefresh:SmartRefreshHeader:${refresh}",
+            rxlifecycle_android   : "com.trello.rxlifecycle2:rxlifecycle-android:${rxlifecycle_android}",
+            rxlifecycle_components: "com.trello.rxlifecycle2:rxlifecycle-components:${rxlifecycle_components}",
+            circleimageview       : "de.hdodenhof:circleimageview:${circleimageview}",
+            roundedimageview      : "com.makeramen:roundedimageview:${roundedimageview}",
+            autosize              : "me.jessyan:autosize:1.2.1",
+            immersionbar          : "com.gyf.immersionbar:immersionbar:${immersionbar}",
+            richtext              : "com.zzhoujay.richtext:richtext:${richtext}",
+            ViewPager2            : "androidx.viewpager2:viewpager2:${ViewPager2}",
+            gson                  : "com.google.code.gson:gson:2.8.2",
+            badgeview             : 'q.rorbin:badgeview:1.1.3',
+            logging_interceptor   : 'com.squareup.okhttp3:logging-interceptor:3.9.0',
+            preference            : 'androidx.preference:preference:1.0.0'
+
+
+    ]
+}

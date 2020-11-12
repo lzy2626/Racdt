@@ -1,6 +1,6 @@
-package com.xiangxue.webview;
+package com.racdt.webview;
 
-import com.xiangxue.webview.ICallbackFromMainToWeb;
+import com.racdt.webview.ICallbackFromMainToWeb;
 
 interface IWebToMain {
       void handleWebAction(String actionName, String jsonParams, in ICallbackFromMainToWeb callback);

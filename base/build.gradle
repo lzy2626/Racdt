@@ -3,17 +3,21 @@ plugins {
 }
 
 android {
-    compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion rootProject.buildToolsVersion
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    def supportDependencies = rootProject.extensions.getByName("ext").supportDependencies
+    def otherDependencies = rootProject.extensions.getByName("ext").otherDependencies
+
+    compileSdkVersion globalConfiguration.androidCompileSdkVersion
+    buildToolsVersion globalConfiguration.androidBuildToolsVersion
 
     defaultConfig {
-        minSdkVersion rootProject.minSdkVersion
-        targetSdkVersion rootProject.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion globalConfiguration.androidMinSdkVersion
+        targetSdkVersion globalConfiguration.androidTargetSdkVersion
+        versionCode globalConfiguration.versionCode
+        versionName globalConfiguration.versionName
         consumerProguardFiles "consumer-rules.pro"
     }
+
 
     buildTypes {
         release {
@@ -25,17 +29,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    
+
     dataBinding {
         enabled true
     }
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    api 'com.google.code.gson:gson:2.8.2'
-
-    //引入rxjava
-    api 'io.reactivex.rxjava2:rxjava:2.1.16'
+    supportDependencies.each { k, v -> api v }
+    otherDependencies.each { k, v -> api v }
 }
