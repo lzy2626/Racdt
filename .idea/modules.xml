@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/base/base.iml" filepath="$PROJECT_DIR$/.idea/modules/base/base.iml" group="Racdt/base" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/common.iml" group="Racdt/common" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/network/network.iml" filepath="$PROJECT_DIR$/.idea/modules/network/network.iml" group="Racdt/network" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/news/news.iml" filepath="$PROJECT_DIR$/.idea/modules/news/news.iml" group="Racdt/news" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/xiangxuewebview/webview.iml" filepath="$PROJECT_DIR$/.idea/modules/xiangxuewebview/webview.iml" group="Racdt/webview" />
     </modules>
   </component>

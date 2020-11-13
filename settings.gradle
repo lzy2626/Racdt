@@ -1,4 +1,4 @@
 include ':common'
 include ':base'
-include ':app', ':network', ':news', ':webview'
+include ':app', ':network', ':webview'
 rootProject.name='Racdt'

@@ -159,6 +159,7 @@
     <orderEntry type="library" name="Gradle: com.gyf.immersionbar:immersionbar:3.0.0-beta05@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.zzhoujay.richtext:richtext:3.0.8@aar" level="project" />
     <orderEntry type="library" name="Gradle: q.rorbin:badgeview:1.1.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.ittianyu:BottomNavigationViewEx:1.2.4@aar" level="project" />
     <orderEntry type="module" module-name="base" />
     <orderEntry type="library" name="Gradle: android-android-28" level="project" />
   </component>

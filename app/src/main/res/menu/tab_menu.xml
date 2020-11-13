@@ -9,7 +9,10 @@
         android:id="@+id/menu_categories"
         android:icon="@drawable/tab_bar_category_ic"
         android:title="@string/menu_categories" />
-
+    <item
+        android:id="@+id/menu_add"
+        android:icon="@drawable/tab_bar_category_ic"
+        android:title="" />
     <item
         android:id="@+id/menu_services"
         android:icon="@drawable/tabbar_crux"

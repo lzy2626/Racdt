@@ -3,12 +3,10 @@ package com.racdt.net;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
@@ -22,48 +20,48 @@ import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.racdt.net.databinding.ActivityMainBinding;
 import com.racdt.net.fragments.AccountFragment;
 import com.racdt.net.fragments.CategoryFragment;
+import com.racdt.net.fragments.HomeFragment;
 import com.racdt.net.fragments.ServiceFragment;
-import com.racdt.news.homefragment.headlinenews.HeadlineNewsFragment;
 
 import java.lang.reflect.Field;
 
 import q.rorbin.badgeview.QBadgeView;
 
-
+/**
+ * @author liuzhanyue
+ * @date 2020/11/13
+ * @desc 主页
+ */
 public class MainActivity extends AppCompatActivity {
-    private Fragment mHomeFragment = new HeadlineNewsFragment();
+    private Fragment mHomeFragment = new HomeFragment();
     private CategoryFragment mCategoryFragment = new CategoryFragment();
     private ServiceFragment mServiceFragment = new ServiceFragment();
     private AccountFragment mAccountFragment = new AccountFragment();
     private ActivityMainBinding viewDataBinding;
+
+    private Fragment fromFragment;
 
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        initBottomNavigation();
+    }
 
+    /**
+     * 初始化导航栏
+     */
+    private void initBottomNavigation() {
         fromFragment = mCategoryFragment;
-        //Set Toolbar
-        setSupportActionBar(viewDataBinding.toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(getString(R.string.menu_home));
 
-        /**
-         * Disable shift method require for to prevent shifting icon.
-         * When you select any icon then remain all icon shift
-         * @param view
-         */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             disableShiftMode(viewDataBinding.bottomView);
         }
-
         viewDataBinding.bottomView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragCategory = null;
-                // init corresponding fragment
                 switch (item.getItemId()) {
                     case R.id.menu_home:
                         fragCategory = mHomeFragment;
@@ -71,17 +69,13 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_categories:
                         fragCategory = mCategoryFragment;
                         break;
+                    case R.id.menu_add:
                     case R.id.menu_services:
                         fragCategory = mServiceFragment;
                         break;
                     case R.id.menu_account:
                         fragCategory = mAccountFragment;
                         break;
-                }
-                //Set bottom menu selected item text in toolbar
-                ActionBar actionBar = getSupportActionBar();
-                if (actionBar != null) {
-                    actionBar.setTitle(item.getTitle());
                 }
                 switchFragment(fromFragment, fragCategory);
                 fromFragment = fragCategory;
@@ -95,8 +89,12 @@ public class MainActivity extends AppCompatActivity {
         showBadgeView(3, 5);
     }
 
-    Fragment fromFragment;
-
+    /**
+     * 切换页面
+     *
+     * @param from
+     * @param to
+     */
     private void switchFragment(Fragment from, Fragment to) {
         if (from != to) {
             FragmentManager manger = getSupportFragmentManager();
@@ -108,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
                 if (to != null) {
                     transaction.add(R.id.container, to, to.getClass().getName()).commit();
                 }
-
             } else {
                 if (from != null) {
                     transaction.hide(from);
@@ -116,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 if (to != null) {
                     transaction.show(to).commit();
                 }
-
             }
         }
     }
@@ -137,25 +133,6 @@ public class MainActivity extends AppCompatActivity {
             }
         } catch (NoSuchFieldException | IllegalAccessException e) {
         }
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home: {
-                finish();
-                break;
-            }
-            // case blocks for other MenuItems (if any)
-        }
-        return true;
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
     }
 
     /**
